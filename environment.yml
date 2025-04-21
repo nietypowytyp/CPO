@@ -2,11 +2,14 @@ name: CPO_env
 channels:
   - defaults
   - conda-forge
+  - fastai
 dependencies:
   - python=3.11
   - numpy
   - pandas
   - scipy
   - pip
+  - opencv
+  - kaggle
   - pip:
       - --pre torch --index-url https://download.pytorch.org/whl/nightly/cu128
