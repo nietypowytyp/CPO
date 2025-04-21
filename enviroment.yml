@@ -1,0 +1,12 @@
+name: CPO_env
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - pip
+  - pip:
+      - --pre torch --index-url https://download.pytorch.org/whl/nightly/cu128
