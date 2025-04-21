@@ -3,6 +3,7 @@ channels:
   - defaults
   - conda-forge
   - fastai
+  - pytorch  # Add the PyTorch channel to ensure compatibility
 dependencies:
   - python=3.11
   - numpy
@@ -11,5 +12,11 @@ dependencies:
   - pip
   - opencv
   - kaggle
+  - pillow
+  - fastai
   - pip:
-      - --pre torch --index-url https://download.pytorch.org/whl/nightly/cu128
+    - fastai
+    - torch==2.6.0+cu126  # Install the specific torch version from the official PyTorch index
+    - torchvision
+    - torchaudio
+    - --extra-index-url https://download.pytorch.org/whl/cu126  # Use the custom PyTorch CUDA index URL

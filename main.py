@@ -1,23 +1,14 @@
 import os
-from zipfile import ZipFile
+from fastai.vision.all import *
+from PIL import Image
 
-# Set Kaggle API credentials
-kaggle_dir = os.path.expanduser("~/.kaggle")
-os.makedirs(kaggle_dir, exist_ok=True)
+# im = Image.open("hand_gestures/images/closedFist/IMG_20220430_180531.jpg")
+# im.thumbnail((250, 250))
+# im.show()
 
-# Make sure your kaggle.json is already in the current dir
-os.system("mv kaggle.json ~/.kaggle/")
-os.chmod(os.path.join(kaggle_dir, 'kaggle.json'), 0o600)
+if __name__ == '__main__':
+    path = Path('hand_gestures/images')
 
-# Download the dataset
-os.system("kaggle datasets download -d ritikagiridhar/2000-hand-gestures")
-
-# Create project data directory
-project_data_path = "project_dir/hand_gestures"
-os.makedirs(project_data_path, exist_ok=True)
-
-# Unzip the downloaded file
-with ZipFile("2000-hand-gestures.zip", 'r') as zip_ref:
-    zip_ref.extractall(project_data_path)
-
-print(f"✅ Dataset extracted to {project_data_path}")
+    failed = verify_images(get_image_files(path))
+    failed.map(Path.unlink)
+    print(len(failed))
