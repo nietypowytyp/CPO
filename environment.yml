@@ -14,8 +14,10 @@ dependencies:
   - kaggle
   - pillow
   - fastai
+  - mediapipe
   - pip:
     - fastai
+    - mediapipe
     - torch==2.6.0+cu126  # Install the specific torch version from the official PyTorch index
     - torchvision
     - torchaudio
