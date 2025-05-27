@@ -19,7 +19,7 @@ random.seed(42)
 for class_folder in source_dir.iterdir():
     if class_folder.is_dir():
         class_name = class_folder.name
-        images = list(class_folder.glob("*.*"))  # You can add filters if needed (e.g. "*.jpg")
+        images = list(class_folder.glob("*.*"))
 
         # Shuffle and split
         random.shuffle(images)
@@ -42,4 +42,4 @@ for class_folder in source_dir.iterdir():
 
         print(f"Class '{class_name}': {len(train_images)} train, {len(valid_images)} valid")
 
-print("\n✅ Dataset split completed.")
+print("\nDataset split completed.")

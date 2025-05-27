@@ -13,7 +13,7 @@ os.chmod(os.path.join(kaggle_dir, 'kaggle.json'), 0o600)
 os.system("kaggle datasets download -d ritikagiridhar/2000-hand-gestures")
 
 # Create project data directory
-project_data_path = "hand_gestures"
+project_data_path = "hand_gestures_og"
 os.makedirs(project_data_path, exist_ok=True)
 
 # Unzip the downloaded file

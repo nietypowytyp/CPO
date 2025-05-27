@@ -3,7 +3,7 @@ channels:
   - defaults
   - conda-forge
   - fastai
-  - pytorch  # Add the PyTorch channel to ensure compatibility
+  - pytorch
 dependencies:
   - python=3.11
   - numpy
@@ -15,10 +15,15 @@ dependencies:
   - pillow
   - fastai
   - mediapipe
+  - matplotlib
+  - seaborn
+  - scikit-learn
+  - torchvision
+  - torchaudio
   - pip:
     - fastai
     - mediapipe
-    - torch==2.6.0+cu126  # Install the specific torch version from the official PyTorch index
+    - torch==2.6.0+cu126
     - torchvision
     - torchaudio
-    - --extra-index-url https://download.pytorch.org/whl/cu126  # Use the custom PyTorch CUDA index URL
+    - --extra-index-url https://download.pytorch.org/whl/cu126
