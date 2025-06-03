@@ -1,9 +1,13 @@
 # CPO
 
-Poject log:
+## Budowa środowiska:
 
-250406 - wgranie zdjęć do rozpoznania
+`conda env create -f environment.yml`
 
-250421 - setup środowiska (conda, torch for CUDA 12.6, fastai)
+`conda activate CPO_env`
 
-250422 - pierwsze podejście do uczenia sieci ResNet 18 oraz pierwsze wyniki predykcji
+`conda env update -f environment.yml --prune`
+
+## Testowanie modelu
+
+W celu przetestowania modelu należy uruchomić notatnik *testing.ipynb*
